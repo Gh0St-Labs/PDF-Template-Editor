@@ -12,5 +12,10 @@ for index, row in data.iterrows():
     pdf.cell(w=0, h=0, txt=row['Topic'], align="L", ln=1)
     pdf.cell(w=0, h=0, txt="  /  /  ", align="R")
     pdf.line(10,20, 200, 20)
+    for int in range(row['Pages'] - 1):
+        pdf.add_page()
+        pdf.cell(w=0, h=0, txt="  /  /  ", align="R")
+        pdf.line(10, 20, 200, 20)
+
 
 pdf.output("output.pdf")
