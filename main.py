@@ -16,6 +16,8 @@ for index, row in data.iterrows():
     pdf.cell(w=0, h=0, txt=row['Topic'], align="L", ln=1)
     pdf.cell(w=0, h=0, txt="  /  /  ", align="R")
     pdf.line(10,20, 200, 20)
+    for i in range(20, 290, 10):
+        pdf.line(10, i, 200, i)
 
     pdf.ln(270)
     pdf.set_font(family='Times', style="I", size=8)
@@ -33,6 +35,8 @@ for index, row in data.iterrows():
         pdf.set_font(family='Times', style="I", size=8)
         pdf.set_text_color(91, 77, 77)
         pdf.cell(w=0, h=8, txt=row['Topic'], align="R")
+        for i in range(20, 290, 10):
+            pdf.line(10, i, 200, i)
 
 
 
